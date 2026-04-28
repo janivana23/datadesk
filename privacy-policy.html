@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>DataDesk — Privacy Policy</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#0e1117;color:#dce4f0;line-height:1.8;font-size:15px;}
+    .wrap{max-width:720px;margin:0 auto;padding:60px 32px;}
+    h1{font-size:32px;font-weight:800;color:#dce4f0;margin-bottom:6px;letter-spacing:-.5px;}
+    .subtitle{color:#566082;font-size:13px;margin-bottom:48px;}
+    h2{font-size:16px;font-weight:700;color:#4a8fff;margin:36px 0 10px;text-transform:uppercase;letter-spacing:.5px;}
+    p{color:#8898b8;margin-bottom:14px;}
+    ul{color:#8898b8;padding-left:20px;margin-bottom:14px;}
+    ul li{margin-bottom:6px;}
+    strong{color:#dce4f0;}
+    .card{background:#13161f;border:1px solid #2c3245;border-radius:10px;padding:20px 24px;margin-bottom:16px;}
+    .card-title{font-size:13px;font-weight:700;color:#00e5a0;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+    .badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-right:6px;}
+    .b-local{background:#0e2a1e;color:#00e5a0;}
+    .b-remote{background:#1a2e4a;color:#4a8fff;}
+    .b-none{background:#2d2a1a;color:#f5a623;}
+    footer{margin-top:64px;padding-top:24px;border-top:1px solid #2c3245;color:#566082;font-size:12px;}
+    a{color:#4a8fff;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">DataDesk — Analyst Toolkit &nbsp;·&nbsp; Last updated: April 2026</p>
+
+  <h2>Overview</h2>
+  <p>DataDesk is a browser extension designed for data analysts. We are committed to being transparent about what data the extension accesses, stores, and transmits. The short version: <strong>we do not collect, sell, or share your personal data.</strong></p>
+
+  <h2>What data the extension accesses</h2>
+
+  <div class="card">
+    <div class="card-title">Tables Tab</div>
+    <span class="badge b-local">local only</span>
+    <p style="margin-top:10px;margin-bottom:0;">Reads HTML content of the current tab to find and extract table data when you click <strong>Scan Page</strong>. This data is processed entirely in your browser and never transmitted anywhere. Nothing is stored after you close the popup.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Stats Tab</div>
+    <span class="badge b-local">local only</span>
+    <p style="margin-top:10px;margin-bottom:0;">All statistical calculations (mean, median, regression, forecasting) are performed <strong>entirely in your browser</strong> using JavaScript. No data is sent to any server.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">SQL Tab — Format</div>
+    <span class="badge b-local">local only</span>
+    <p style="margin-top:10px;margin-bottom:0;">SQL formatting and syntax highlighting run entirely in your browser. No SQL is transmitted anywhere.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">SQL Tab — AI Optimize</div>
+    <span class="badge b-remote">sends to OpenRouter</span>
+    <p style="margin-top:10px;margin-bottom:0;">When you click <strong>⚡ AI Optimize</strong>, your SQL query is sent to <a href="https://openrouter.ai" target="_blank">OpenRouter</a> (a third-party AI inference service) along with your user-provided API key. <strong>No other data is sent.</strong> Your API key is stored locally in <code>chrome.storage.local</code> and never sent to anyone other than OpenRouter. Please review <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter's privacy policy</a>.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Notes Tab</div>
+    <span class="badge b-local">local only</span>
+    <p style="margin-top:10px;margin-bottom:0;">Notes are stored locally in <code>chrome.storage.local</code> on your device. They are never transmitted to any server unless you explicitly use the Team tab to push them to GitHub.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Team Tab — GitHub Sync</div>
+    <span class="badge b-remote">sends to GitHub</span>
+    <p style="margin-top:10px;margin-bottom:0;">When you connect your GitHub account and push/pull notes, your notes are sent to <a href="https://github.com" target="_blank">GitHub Gist</a> (a third-party service) using your user-provided Personal Access Token. The token is stored locally in <code>chrome.storage.local</code>. Gists created by this extension are <strong>public</strong> — do not push sensitive or confidential information. Please review <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">GitHub's privacy policy</a>.</p>
+  </div>
+
+  <h2>Data Storage</h2>
+  <ul>
+    <li>All user data (notes, API keys, GitHub tokens, settings) is stored in <strong><code>chrome.storage.local</code></strong> — local to your browser, on your device only.</li>
+    <li>DataDesk does not operate any servers, databases, or analytics infrastructure.</li>
+    <li>We have no way to access your locally stored data.</li>
+  </ul>
+
+  <h2>Permissions used and why</h2>
+  <ul>
+    <li><strong>activeTab</strong> — Required to scan the current page for tables when you click Scan Page.</li>
+    <li><strong>scripting</strong> — Required to run the table extraction script on the current page.</li>
+    <li><strong>storage</strong> — Required to save your notes, settings, and API keys locally.</li>
+    <li><strong>host_permissions (api.github.com)</strong> — Required to push/pull team notes via GitHub Gist.</li>
+    <li><strong>host_permissions (openrouter.ai)</strong> — Required to call the AI SQL optimization API.</li>
+  </ul>
+  <p>No other permissions are requested. We request the minimum permissions required to provide the extension's features.</p>
+
+  <h2>Third-party services</h2>
+  <p>DataDesk optionally integrates with the following third-party services. These are <strong>opt-in only</strong> — you must explicitly connect them:</p>
+  <ul>
+    <li><strong>GitHub Gist</strong> (Team Notes sync) — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">GitHub Privacy Policy</a></li>
+    <li><strong>OpenRouter</strong> (AI SQL optimization) — <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter Privacy Policy</a></li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>DataDesk is designed for professional use by data analysts. It is not directed at children under 13 and we do not knowingly collect data from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this privacy policy as the extension evolves. The "last updated" date at the top of this page reflects the most recent revision. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy or the extension's data practices, please open an issue on our <a href="https://github.com/datadesk-extension" target="_blank">GitHub repository</a>.</p>
+
+  <footer>
+    <p>DataDesk — Analyst Toolkit &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; This extension does not collect or sell user data.</p>
+  </footer>
+
+</div>
+</body>
+</html>
